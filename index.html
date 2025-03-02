@@ -248,7 +248,7 @@
       <p><strong>IES Avampace</strong></p>
     </div>
   </header>
-  
+
   <!-- Tríptico Interactivo -->
   <section class="triptico">
     <!-- Panel 0-1 Año -->
@@ -290,7 +290,7 @@
         </ul>
       </div>
     </div>
-    
+
     <!-- Panel 1-2 Años -->
     <div class="panel" id="panel2" data-panel="panel2">
       <div class="panel-header">
@@ -327,7 +327,7 @@
         </ul>
       </div>
     </div>
-    
+
     <!-- Panel 2-3 Años -->
     <div class="panel" id="panel3" data-panel="panel3">
       <div class="panel-header">
@@ -363,7 +363,7 @@
       </div>
     </div>
   </section>
-  
+
   <!-- Tabla Interactiva con definición mínima -->
   <section class="tabla-interactiva">
     <h2 style="color:#FF5722">Trastornos Relacionados con la Higiene</h2>
@@ -410,7 +410,7 @@
       </tbody>
     </table>
   </section>
-  
+
   <!-- Sección interactiva "Comprobamos Juntos" -->
   <section class="comprobamos">
     <h2>Comprobamos Juntos</h2>
@@ -433,7 +433,7 @@
       <div class="feedback"></div>
     </div>
   </section>
-  
+
   <!-- Sección del video -->
   <section class="video-section">
     <h2 class="video-title">Hábitos de Higiene</h2>
@@ -441,13 +441,13 @@
       <iframe src="https://www.youtube-nocookie.com/embed/U5Ve1Qp1KWk?start=10" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="Video sobre Higiene Infantil"></iframe>
     </div>
   </section>
-  
+
   <footer>
     <p id="fecha"></p>
     <p>Autor: Ana Maria da Cunha Goncalves</p>
     <img src="https://raw.githubusercontent.com/CursoAvampace/APSI/main/logo%20instituto.png" alt="Logo IES Avampace">
   </footer>
-  
+
   <!-- Modal para imágenes y contenido expandido -->
   <div id="imageModal" class="modal">
     <span class="close" id="modalClose">&times;</span>
@@ -457,13 +457,13 @@
     <span class="close" id="panelModalClose">&times;</span>
     <div class="modal-panel-content" id="modalPanelContent"></div>
   </div>
-  
+
   <script>
     // Actualizar fecha en el pie de página
     document.getElementById('fecha').innerText = 'Fecha: ' + new Date().toLocaleDateString('es-ES');
 
-    /* 
-      Nota: Si tu proyecto no utiliza Jekyll, crea un archivo vacío llamado ".nojekyll" 
+    /*
+      Nota: Si tu proyecto no utiliza Jekyll, crea un archivo vacío llamado ".nojekyll"
       en la raíz del repositorio para evitar que GitHub Pages oculte archivos/carpetas que comienzan con guion bajo.
     */
 
@@ -537,14 +537,15 @@
       };
       return info[trastorno];
     }
-    
+
     // Evento para expandir/collapse filas de la tabla
     document.addEventListener('DOMContentLoaded', function() {
       var tbody = document.querySelector('#trastornosTable tbody');
-      
+
       // Agregar indicador a cada fila minimal (ya que la tabla tiene dos columnas)
       tbody.querySelectorAll('tr:not(.accordion-content)').forEach(function(row) {
         var firstCell = row.querySelector('td');
         var indicator = document.createElement('span');
         indicator.className = 'accordion-indicator';
-        
+        indicator.textContent = '►';
+     
